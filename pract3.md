@@ -179,11 +179,43 @@ for i in range(10):
 Язык нулей и единиц.
 
 ```
-10
-100
-11
-101101
-000
+import random
+
+def parse_bnf(text):
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+
+def generate_phrase(grammar, start):
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
+
+BNF = '''
+E = 0 | 1 | E E
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'E'))
+
+```
+
+```
+0
+01
+1
+1
+11110
+0
+1
+1000
+0
+1
 ```
 
 ## Задача 4
@@ -191,11 +223,48 @@ for i in range(10):
 Язык правильно расставленных скобок двух видов.
 
 ```
-(({((()))}))
-{}
-{()}
-()
-{}
+
+import random
+
+def parse_bnf(text):
+    '''
+    Преобразовать текстовую запись БНФ в словарь.
+    '''
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+
+def generate_phrase(grammar, start):
+    '''
+    Сгенерировать случайную фразу.
+    '''
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
+BNF = '''
+E = ( E ) | { E } | E E |
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'E'))
+
+```
+
+```
+{{{{{}({})}}}}
+
+(({(({{}}))}))
+{{({})}}
+{{((((((()))))))}}
+
+{({(())})}
+{{{{({()}{})}((()))}}(({({(){}}((())){((({})){{{()}(((({}))))}}{})})}{}()()))}
+((((()))))
 ```
 
 ## Задача 5
@@ -203,10 +272,48 @@ for i in range(10):
 Язык выражений алгебры логики.
 
 ```
-((~(y & x)) | (y) & ~x | ~x) & x
-y & ~(y)
-(~(y) & y & ~y)
+
+import random
+
+def parse_bnf(text):
+    '''
+    Преобразовать текстовую запись БНФ в словарь.
+    '''
+    grammar = {}
+    rules = [line.split('=') for line in text.strip().split('\n')]
+    for name, body in rules:
+        grammar[name.strip()] = [alt.split() for alt in body.split('|')]
+    return grammar
+
+
+def generate_phrase(grammar, start):
+    '''
+    Сгенерировать случайную фразу.
+    '''
+    if start in grammar:
+        seq = random.choice(grammar[start])
+        return ''.join([generate_phrase(grammar, name) for name in seq])
+    return str(start)
+
+BNF = '''
+E = ( E ) | E & E | E | E | ~ E | x | y
+'''
+
+for i in range(10):
+    print(generate_phrase(parse_bnf(BNF), 'E'))
+```
+
+
+
+```
+(x)
+(((~(((x)))&(x)&(~y))))
+(((~x)&y))
 ~x
-~((x) & y | (y) | (x)) & x | x | (y & ~y)
+~(x)
+x
+(y)
+x
+~y
 ```
 
