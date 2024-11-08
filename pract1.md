@@ -5,39 +5,7 @@
 grep '^[^:]' /etc/passwd | cut -d: -f1 | sort
 ```
 
-```
-localhost:~# grep /etc/passwd | cut -d: f1 | sort
-adm
-at
-bin
-cron
-cyrus
-daemon
-dhcp
-ftp
-games
-guest
-halt
-1p
-mail
-man
-news
-nobody
-ntp
-operator
-postmaster
-root
-shutdown
-smmsp
-squid
-sshd
-svn
-sync
-uucp
-vpopmail
-xfs
-localhost:~#
-```
+![11](https://github.com/user-attachments/assets/c5baf9a9-f72a-4560-9b64-63602b2d0e3e)
 
 
 # Задание 2
@@ -47,15 +15,8 @@ localhost:~#
 cat /etc/protocols | awk '{print $2, $1}' | sort -nr | head -n5
 ```
 
-```
-localhost:~# awk '{print $2, $1}' /etc/protocols sort -nr
-head -n 5
-103 pim
-98 encap
-94 ipip
-89 ospf
-81 vmtp
-```
+![12](https://github.com/user-attachments/assets/d6c0f442-d1db-4763-86ee-85d28a932884)
+
 
 
 # Задание 3
@@ -74,14 +35,8 @@ printf '| %s |\n' "$text"
 printf '+%s+\n' "$(printf '%*s' "$banner_length" '' | tr ' ' '-')"
 ```
 
-```
-./test1.sh "HELLO FROM RTU MIREA"
-```
-```
-+-----------------------+
-| Hello from RTU MIREA! |
-+-----------------------+
-```
+![13](https://github.com/user-attachments/assets/016d547b-fdac-40f4-8ee4-fcddfc497ddf)
+
 
 
 # Задание 4
@@ -90,17 +45,8 @@ printf '+%s+\n' "$(printf '%*s' "$banner_length" '' | tr ' ' '-')"
 ```
 grep -oE '\b[A-Za-z_][A-Za-z0-9_]*\b' main.cpp | sort -u
 ```
-```
-Hello
-cout
-endl
-include
-int
-iostream
-main
-return
-world
-```
+![14](https://github.com/user-attachments/assets/c0df7bc4-e295-4612-9d04-d3ae735039a2)
+
 
 # Задание 5
 ## Написать программу для регистрации пользовательской команды (правильные права доступа и копирование в /usr/local/bin).
@@ -132,6 +78,8 @@ for file in *.{c,js,py}; do
   fi
 done
 ```
+![16](https://github.com/user-attachments/assets/c4b5a8fe-ea33-4300-838b-1eb4f0bced2c)
+
 
 
 # Задание 7
@@ -158,6 +106,7 @@ find "$directory" -type f -exec md5sum {} + | sort | awk '{
     }
 }'
 ```
+![17](https://github.com/user-attachments/assets/fa3a878d-a770-4025-ae20-a521f5defa6b)
 
 
 # Задание 8
@@ -179,6 +128,8 @@ find "$directory" -type f -exec md5sum {} + | sort | awk '{
     echo "файл с расширением $extension из $search_path архивирован в $archive_name..."
     find "$search_path" -type f -name "*.$extension" | tar -cvf "$archive_name" -T -
 ```
+![18](https://github.com/user-attachments/assets/a82edac2-b174-40c0-886d-0a3206b216cc)
+
 
 
 # Задание 9
@@ -208,9 +159,8 @@ else
 fi
 ```
 
-```
-bash test.sh Test.py Test.txt
-```
+![19](https://github.com/user-attachments/assets/3b601276-205d-49b9-a518-f2f0efafb733)
+
 
 
 # Задание 10
@@ -234,6 +184,7 @@ fi
 
 find "$directory" -type f -name "*.txt" -empty -print
 ```
+![110](https://github.com/user-attachments/assets/25db33ab-efa6-498e-894a-a845a1e58176)
 
 
 
