@@ -26,14 +26,14 @@ git merge second
 git checkout in
 
 ```
-![11](https://github.com/user-attachments/assets/c5baf9a9-f72a-4560-9b64-63602b2d0e3e)
+![41]([https://github.com/user-attachments/assets/c5baf9a9-f72a-4560-9b64-63602b2d0e3e](https://github.com/artmcar/Conf/blob/main/im/z1.png?raw=true))
 
 
 ## Задача 2
 
 Создать локальный git-репозиторий. Задать свои имя и почту (далее – coder1). Разместить файл prog.py с какими-нибудь данными. Прислать в текстовом виде диалог с git.
 
-![11](https://github.com/user-attachments/assets/c5baf9a9-f72a-4560-9b64-63602b2d0e3e)
+![42]([https://github.com/user-attachments/assets/c5baf9a9-f72a-4560-9b64-63602b2d0e3e](https://github.com/artmcar/Conf/blob/main/im/z2.png?raw=true))
 
 
 ## Задача 3
@@ -54,4 +54,4 @@ Coder2 добавляет в readme в раздел об авторах свою
 
 Написать программу на Питоне (или другом ЯП), которая выводит список содержимого всех объектов репозитория. Воспользоваться командой "git cat-file -p". Идеальное решение – не использовать иных сторонних команд и библиотек для работы с git.
 
-![11](https://github.com/user-attachments/assets/c5baf9a9-f72a-4560-9b64-63602b2d0e3e)
+![44]([https://github.com/user-attachments/assets/c5baf9a9-f72a-4560-9b64-63602b2d0e3e](https://github.com/artmcar/Conf/blob/main/im/z4.png?raw=true))
