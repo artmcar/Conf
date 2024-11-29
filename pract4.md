@@ -48,7 +48,28 @@ Coder2 добавляет в readme в раздел об авторах свою
 
 Прислать список набранных команд и содержимое git log.
 
-
+```
+git init --bare server.git
+git remote add server ../server.git/
+git remote -v
+git push server master
+git clone server.git coder2
+echo "Test" >> readme.md
+git add readme.md
+git commit -m "test info"
+git push server master
+echo "Test2" >> readme.md
+git add readme.md
+git config user.name "Artur"
+git config user.email "makaryan.a.a@edu.mirea.ru"
+git commit -m "test2 info"
+git pull --no-rebase origin master
+git add readme.md
+git commit -m "Final"
+git push origin master
+git log --graph --all
+```
+![43](https://github.com/artmcar/Conf/blob/main/im/z3.png?raw=true)
 
 ## Задача 4
 
